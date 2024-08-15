@@ -1,0 +1,9 @@
+crypto-compare:
+  api:
+    key: fcf7cf7e64b42afa243f0db7ae81a663e987cbc21cebd45ce2101c52903b7399
+    rate-limit: 2000
+    refresh-rate: 0
+
+logging:
+  level:
+    com.crypto.cryptocompare.api.min.CryptoCompareMinClient: DEBUG
