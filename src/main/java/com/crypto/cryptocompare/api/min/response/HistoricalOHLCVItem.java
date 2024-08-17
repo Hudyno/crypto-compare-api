@@ -19,10 +19,10 @@ public class HistoricalOHLCVItem {
     private Double open;
 
     @JsonProperty("volumefrom")
-    private Double volumefrom;
+    private Double volumeFrom;
 
     @JsonProperty("volumeto")
-    private Double volumeto;
+    private Double volumeTo;
 
     @JsonProperty("close")
     private Double close;
