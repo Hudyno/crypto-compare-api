@@ -7,3 +7,4 @@ crypto-compare:
 logging:
   level:
     com.crypto.cryptocompare.api.min.CryptoCompareMinClient: DEBUG
+    com.crypto.cryptocompare.api.data.CryptoCompareDataClient: DEBUG
