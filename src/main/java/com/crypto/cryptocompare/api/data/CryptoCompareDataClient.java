@@ -12,5 +12,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 public interface CryptoCompareDataClient {
 
     @GetMapping("/asset/v1/summary/list")
-    Response<AssetSummary> getSummaryList(@SpringQueryMap SummaryListRequest summaryListRequest);
+    Response<SummaryListData> getSummaryList(@SpringQueryMap SummaryListParameters parameters);
+
 }

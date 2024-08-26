@@ -9,7 +9,7 @@ import lombok.Data;
 public class Response<T> {
 
     @JsonProperty("Data")
-    private com.crypto.cryptocompare.api.data.response.Data<T> data;
+    private T data;
 
     @JsonProperty("Err")
     private Error err;

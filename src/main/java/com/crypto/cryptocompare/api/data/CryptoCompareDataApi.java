@@ -21,10 +21,7 @@ public class CryptoCompareDataApi {
     public Optional<Response<AssetSummary>> getSummaryList(SummaryListRequest summaryListRequest) {
         Response<AssetSummary> response = cryptoCompareDataClient.getSummaryList(summaryListRequest);
 
-        if (nonNull(response.getErr())) {
-            log.error(response.getErr().getMessage());
-            return Optional.empty();
-        }
-        return Optional.of(response);
+    public Response<SummaryListData> getSummaryList(SummaryListParameters parameters) {
+        return cryptoCompareDataClient.getSummaryList(parameters);
     }
 }
