@@ -1,8 +1,10 @@
 package com.crypto.cryptocompare.api.data.request;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 
@@ -12,7 +14,9 @@ import java.util.List;
 @AllArgsConstructor
 @RequiredArgsConstructor
 @NoArgsConstructor
-public class SummaryListParameters {
+@JsonIgnoreProperties(ignoreUnknown = true)
+@EqualsAndHashCode(callSuper = true)
+public class SummaryListParameters extends RequestParameters {
 
     @JsonProperty("asset_type")
     private String assetType;

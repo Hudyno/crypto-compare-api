@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 
@@ -12,8 +13,9 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @RequiredArgsConstructor
+@EqualsAndHashCode(callSuper = true)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class HistoricalOHLCVParameters {
+public class HistoricalOHLCVParameters extends RequestParameters {
 
     @NonNull
     @JsonProperty("market")
