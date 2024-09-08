@@ -20,7 +20,7 @@ public class DexInstrumentData extends InstrumentData {
     private Long lastAmmSwapOnChainTimestamp;
 
     @JsonProperty("TOTAL_AMM_SWAPS_ONCHAIN")
-    private Integer totalAmmSwapsOnChain;
+    private Long totalAmmSwapsOnChain;
 
     @JsonProperty("HAS_AMM_LIQUIDITY_UPDATES_ONCHAIN")
     private Boolean hasAmmLiquidityUpdatesOnChain;
@@ -32,7 +32,7 @@ public class DexInstrumentData extends InstrumentData {
     private Long lastAmmLiquidityUpdateOnChainTimestamp;
 
     @JsonProperty("TOTAL_AMM_LIQUIDITY_UPDATES_ONCHAIN")
-    private Integer totalAmmLiquidityUpdatesOnChain;
+    private Long totalAmmLiquidityUpdatesOnChain;
 
     @JsonProperty("INSTRUMENT_MARKET_FEE_PERCENTAGE")
     private Double instrumentMarketFeePercentage;
