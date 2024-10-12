@@ -1,15 +1,19 @@
 package com.crypto.cryptocompare.api.data;
 
 import com.crypto.cryptocompare.api.data.request.HistoricalOHLCVParameters;
+import com.crypto.cryptocompare.api.data.request.HistoricalSupplyParameters;
 import com.crypto.cryptocompare.api.data.request.MarketsAndInstrumentsParameters;
 import com.crypto.cryptocompare.api.data.request.MarketsParameters;
 import com.crypto.cryptocompare.api.data.request.SummaryListParameters;
+import com.crypto.cryptocompare.api.data.request.TopListParameters;
 import com.crypto.cryptocompare.api.data.response.CexData;
 import com.crypto.cryptocompare.api.data.response.CexHistoricalOHLCV;
 import com.crypto.cryptocompare.api.data.response.DexData;
 import com.crypto.cryptocompare.api.data.response.DexHistoricalOHLCV;
+import com.crypto.cryptocompare.api.data.response.HistoricalSupply;
 import com.crypto.cryptocompare.api.data.response.Response;
 import com.crypto.cryptocompare.api.data.response.SummaryListData;
+import com.crypto.cryptocompare.api.data.response.TopListData;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -52,5 +56,13 @@ public class CryptoCompareDataApi {
 
     public Response<List<CexHistoricalOHLCV>> getCexDailyHistoricalOHLCV(@NonNull HistoricalOHLCVParameters parameters) {
         return cryptoCompareDataClient.getCexDailyHistoricalOHLCV(parameters);
+    }
+
+    public Response<TopListData> getTopListData(@NonNull TopListParameters parameters) {
+        return cryptoCompareDataClient.getTopListData(parameters);
+    }
+
+    public Response<List<HistoricalSupply>> getHistoricalSupply(@NonNull HistoricalSupplyParameters parameters) {
+        return cryptoCompareDataClient.getHistoricalSupply(parameters);
     }
 }

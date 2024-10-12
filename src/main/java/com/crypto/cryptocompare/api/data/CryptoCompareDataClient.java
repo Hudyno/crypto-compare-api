@@ -2,15 +2,19 @@ package com.crypto.cryptocompare.api.data;
 
 import com.crypto.cryptocompare.api.configuration.CryptoCompareClientConfig;
 import com.crypto.cryptocompare.api.data.request.HistoricalOHLCVParameters;
+import com.crypto.cryptocompare.api.data.request.HistoricalSupplyParameters;
 import com.crypto.cryptocompare.api.data.request.MarketsAndInstrumentsParameters;
 import com.crypto.cryptocompare.api.data.request.MarketsParameters;
 import com.crypto.cryptocompare.api.data.request.SummaryListParameters;
+import com.crypto.cryptocompare.api.data.request.TopListParameters;
 import com.crypto.cryptocompare.api.data.response.CexData;
 import com.crypto.cryptocompare.api.data.response.CexHistoricalOHLCV;
 import com.crypto.cryptocompare.api.data.response.DexData;
 import com.crypto.cryptocompare.api.data.response.DexHistoricalOHLCV;
+import com.crypto.cryptocompare.api.data.response.HistoricalSupply;
 import com.crypto.cryptocompare.api.data.response.Response;
 import com.crypto.cryptocompare.api.data.response.SummaryListData;
+import com.crypto.cryptocompare.api.data.response.TopListData;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.cloud.openfeign.SpringQueryMap;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -41,4 +45,10 @@ public interface CryptoCompareDataClient {
 
     @GetMapping("/onchain/v1/amm/historical/swap/days")
     Response<List<DexHistoricalOHLCV>> getDexDailyHistoricalOHLCV(@SpringQueryMap HistoricalOHLCVParameters parameters);
+
+    @GetMapping("/asset/v1/top/list")
+    Response<TopListData> getTopListData(@SpringQueryMap TopListParameters parameters);
+
+    @GetMapping("/onchain/v2/historical/supply/days")
+    Response<List<HistoricalSupply>> getHistoricalSupply(@SpringQueryMap HistoricalSupplyParameters parameters);
 }

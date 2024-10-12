@@ -22,4 +22,9 @@ public class CryptoCompareClientConfig {
     Logger.Level feignLoggerLevel() {
         return Logger.Level.BASIC;
     }
+
+    @Bean
+    public CryptoCompareErrorDecoder errorDecoder() {
+        return new CryptoCompareErrorDecoder();
+    }
 }
